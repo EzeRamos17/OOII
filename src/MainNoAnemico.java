@@ -2,8 +2,10 @@
 public class MainNoAnemico {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		var tiempo = new TiempoNoAnemico();
+		
+		tiempo.imprimirFechaFormatoLargo();
+		tiempo.imprimirFechaFormatoCorto();
 	}
 
 }
