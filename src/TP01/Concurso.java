@@ -8,4 +8,7 @@ public class Concurso {
 	private LocalDate fechaInicioInscripcion;
 	private LocalDate fechaFinInscripcion;
 	private ArrayList<Participante> participantes;
+	private Integer puntosPrimerDia;
+	
+	
 }
