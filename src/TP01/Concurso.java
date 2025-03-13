@@ -1,5 +1,11 @@
 package TP01;
 
-public class Concurso {
+import java.time.LocalDate;
+import java.util.ArrayList;
 
+public class Concurso {
+	private String nombre;
+	private LocalDate fechaInicioInscripcion;
+	private LocalDate fechaFinInscripcion;
+	private ArrayList<Participante> participantes;
 }
