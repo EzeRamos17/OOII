@@ -4,10 +4,10 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Concurso {
-	private String nombre;
-	private LocalDate fechaInicioInscripcion;
-	private LocalDate fechaFinInscripcion;
-	private Integer puntosPrimerDia;
+	private final String nombre;
+	private final LocalDate fechaInicioInscripcion;
+	private final LocalDate fechaFinInscripcion;
+	private final Integer puntosPrimerDia;
 	
 	public Concurso(String nombre, LocalDate fechaInicioInscripcion, LocalDate fechaFinInscripcion, Integer puntosPrimerDia) {
 		this.nombre = nombre;
