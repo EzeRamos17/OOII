@@ -1,10 +1,13 @@
-package TP01;
+package TP01punto1.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.time.LocalDate;
 
 import org.junit.jupiter.api.Test;
+
+import TP01punto1.Concurso;
+import TP01punto1.Participante;
 
 class TestConcurso {
 
