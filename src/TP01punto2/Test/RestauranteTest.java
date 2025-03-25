@@ -1,8 +1,19 @@
-package TP01punto2;
+package TP01punto2.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
+
+import TP01punto2.ComarcaPlus;
+import TP01punto2.Mastercard;
+import TP01punto2.Pago;
+import TP01punto2.Pedido;
+import TP01punto2.Producto;
+import TP01punto2.Propina;
+import TP01punto2.TarjetaDeCredito;
+import TP01punto2.Viedma;
+import TP01punto2.Visa;
+import TP01punto2.Producto.TipoProducto;
 
 class RestauranteTest {
 	
