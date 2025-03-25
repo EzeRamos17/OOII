@@ -1,25 +1,28 @@
 package TP01punto2;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Pedido {
-    protected final Map<String, Integer> items;
-    protected final Map<String, Double> precios;
+	private List<Producto> productos;
 
     public Pedido() {
-        this.items = new HashMap<>();
-        this.precios = new HashMap<>();
+        this.productos = new ArrayList<>();
     }
 
-    public void agregarItem(String nombre, int cantidad, double precio) {
-        items.put(nombre, cantidad);
-        precios.put(nombre, precio);
+    public void agregarProducto(Producto producto) {
+        productos.add(producto);
     }
 
     public double calcularTotal() {
-        return items.entrySet().stream()
-                .mapToDouble(entry -> precios.get(entry.getKey()) * entry.getValue())
-                .sum();
+        double total = 0;
+        for (Producto producto : productos) {
+            total += producto.Precio();
+        }
+        return total;
+    }
+    
+    public List<Producto> Pedidos(){
+    	return productos;
     }
 }
