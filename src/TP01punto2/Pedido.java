@@ -13,15 +13,7 @@ public class Pedido {
     public void agregarProducto(Producto producto) {
         productos.add(producto);
     }
-
-    public double calcularTotal() {
-        double total = 0;
-        for (Producto producto : productos) {
-            total += producto.Precio();
-        }
-        return total;
-    }
-    
+   
     public List<Producto> Pedidos(){
     	return productos;
     }
