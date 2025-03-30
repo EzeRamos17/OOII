@@ -32,7 +32,7 @@ class TestConcurso {
 		
 		//participante.inscribirseEn(concurso, hoy.plusDays(2)); //no pasa el test
 		participante.inscribirseEn(concurso, hoy); //pasa el test
-		
+		//prueba
 		//assertTrue(participante.estaInscriptoEn(concurso));//revisar los 10 puntos
 		assertTrue(participante.tienePuntos(10), "El participante debería recibir 10 puntos por inscribirse el primer día.");
 	}
