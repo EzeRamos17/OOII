@@ -1,7 +1,7 @@
 package TP01punto2;
 
-public class Mastercard extends TarjetaDeCredito{
-	public Mastercard() {
+public class Mastercard extends TarjetaDeCredito {
+    public Mastercard() {
         this.descuento = 0.02;  // 2% de descuento
     }
 

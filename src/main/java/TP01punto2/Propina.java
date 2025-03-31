@@ -1,7 +1,7 @@
 package TP01punto2;
 
 public class Propina {
-	private final double porcentaje;
+    private final double porcentaje;
 
     public Propina(double porcentaje) {
         this.porcentaje = porcentaje;

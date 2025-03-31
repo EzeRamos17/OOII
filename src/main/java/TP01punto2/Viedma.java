@@ -1,7 +1,7 @@
 package TP01punto2;
 
-public class Viedma extends TarjetaDeCredito{
-	public Viedma() {
+public class Viedma extends TarjetaDeCredito {
+    public Viedma() {
         this.descuento = 0.0;  // Sin descuento
     }
 

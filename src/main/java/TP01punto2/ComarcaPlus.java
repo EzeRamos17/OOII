@@ -1,7 +1,7 @@
 package TP01punto2;
 
-public class ComarcaPlus extends TarjetaDeCredito{
-	public ComarcaPlus() {
+public class ComarcaPlus extends TarjetaDeCredito {
+    public ComarcaPlus() {
         this.descuento = 0.02;  // 2% de descuento en total
     }
 

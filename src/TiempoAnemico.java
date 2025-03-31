@@ -1,13 +1,13 @@
 import java.time.LocalDate;
 
 public class TiempoAnemico {
-	private LocalDate fecha;
+    private LocalDate fecha;
 
-	public TiempoAnemico() {
-		this.fecha = LocalDate.now();
-	}
+    public TiempoAnemico() {
+        this.fecha = LocalDate.now();
+    }
 
-	public LocalDate getFecha() {
-		return fecha;
-	}
+    public LocalDate getFecha() {
+        return fecha;
+    }
 }

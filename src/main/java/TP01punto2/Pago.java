@@ -1,7 +1,7 @@
 package TP01punto2;
 
 public class Pago {
-	private TarjetaDeCredito tarjeta;
+    private TarjetaDeCredito tarjeta;
     private Pedido pedido;
     private Propina propina;
 
@@ -48,7 +48,7 @@ public class Pago {
 
         // Calcular el total final
         double totalFinal = totalConDescuento + montoPropina;
-        
+
         // Redondear a dos decimales
         return Math.round(totalFinal * 100.0) / 100.0;
     }
