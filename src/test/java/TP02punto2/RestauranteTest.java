@@ -1,15 +1,5 @@
 package TP02punto2;
 
-import TP01punto2.*;
-import TP01punto2.ComarcaPlus;
-import TP01punto2.Mastercard;
-import TP01punto2.Pago;
-import TP01punto2.Pedido;
-import TP01punto2.Producto;
-import TP01punto2.Propina;
-import TP01punto2.TarjetaDeCredito;
-import TP01punto2.Viedma;
-import TP01punto2.Visa;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -33,7 +23,9 @@ class RestauranteTest {
         // Cliente paga con Visa y elige una propina del 2%
         TarjetaDeCredito tarjetaVisa = new Visa();
         Propina propina2Porc = new Propina(0.02);
-        Pago pagoVisa = new Pago(tarjetaVisa, pedido, propina2Porc);
+        RegistroPagos fakeRegistro = new FakeRegistroPagos();
+
+        Pago pagoVisa = new Pago(tarjetaVisa, pedido, propina2Porc, fakeRegistro);
 
         // Cálculo esperado
         double totalEsperado = 354.55;
@@ -57,7 +49,8 @@ class RestauranteTest {
 
         TarjetaDeCredito tarjetaMastercard = new Mastercard();
         var propina = new Propina(0.05);
-        Pago pagoMastercardPago = new Pago(tarjetaMastercard, pedido, propina);
+        RegistroPagos fakeRegistro = new FakeRegistroPagos();
+        Pago pagoMastercardPago = new Pago(tarjetaMastercard, pedido, propina, fakeRegistro);
 
         double totalEsperado = 361.83;
 
@@ -71,7 +64,7 @@ class RestauranteTest {
         var plato1 = new Producto("Pizza Margarita", 150.0, Producto.TipoProducto.PLATO);
         var plato2 = new Producto("Ensalada César", 120.0, Producto.TipoProducto.PLATO);
 
-        var pedido = new TP01punto2.Pedido();
+        var pedido = new Pedido();
         pedido.agregarProducto(bebida1);
         pedido.agregarProducto(bebida2);
         pedido.agregarProducto(plato1);
@@ -79,7 +72,9 @@ class RestauranteTest {
 
         var tarjetaComarcaPlus = new ComarcaPlus();
         var propina = new Propina(0.03);
-        var pagoComarcaPlus = new Pago(tarjetaComarcaPlus, pedido, propina);
+        RegistroPagos fakeRegistro = new FakeRegistroPagos();
+
+        var pagoComarcaPlus = new Pago(tarjetaComarcaPlus, pedido, propina, fakeRegistro);
 
         double totalEsperado = 353.26;
 
@@ -101,7 +96,8 @@ class RestauranteTest {
 
         var tarjetaViedma = new Viedma();
         var propina = new Propina(0.02);
-        var pagoViedma = new Pago(tarjetaViedma, pedido, propina);
+        RegistroPagos fakeRegistro = new FakeRegistroPagos();
+        var pagoViedma = new Pago(tarjetaViedma, pedido, propina, fakeRegistro);
 
         double totalEsperado = 357;
 

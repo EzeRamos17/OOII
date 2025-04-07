@@ -1,20 +1,16 @@
 package TP02punto2;
 
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-
 public class Pago {
     private TarjetaDeCredito tarjeta;
     private Pedido pedido;
     private Propina propina;
+    private RegistroPagos registroPagos;
 
-    public Pago(TarjetaDeCredito tarjeta, Pedido pedido, Propina propina) {
+    public Pago(TarjetaDeCredito tarjeta, Pedido pedido, Propina propina, RegistroPagos registroPagos) {
         this.tarjeta = tarjeta;
         this.pedido = pedido;
         this.propina = propina;
+        this.registroPagos = registroPagos;
     }
 
     public double calcularTotalConDescuentoYPropina() {
@@ -50,18 +46,8 @@ public class Pago {
         double montoPropina = propina.calcularPropina(totalConDescuento);
         double totalFinal = Math.round((totalConDescuento + montoPropina) * 100.0) / 100.0;
 
-        guardarEnArchivo(totalFinal);
+        registroPagos.registrarPago(totalFinal);
         return totalFinal;
-    }
-
-    private void guardarEnArchivo(double monto) {
-        try (FileWriter fw = new FileWriter("historial_pagos.txt", true);
-             PrintWriter pw = new PrintWriter(fw)) {
-            String fechaHora = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss"));
-            pw.println(fechaHora + " || " + monto);
-        } catch (IOException e) {
-            System.out.println("Error al guardar en el archivo: " + e.getMessage());
-        }
     }
 }
 

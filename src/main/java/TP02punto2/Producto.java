@@ -19,6 +19,10 @@ public class Producto {
         return tipo;
     }
 
+    public String Nombre() {
+        return nombre;
+    }
+
     public enum TipoProducto {
         BEBIDA, PLATO
     }
